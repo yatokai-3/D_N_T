@@ -71,37 +71,37 @@ update_clock()
 
 #      ...  . . . . . . .... ......... ........ ..... . . . . . . . 
 #....................... PLACEMENTS........................
-# # RIGHT_INDICATOR....
-# p1=Image.open("r.png")
-# img_resize1=p1.resize((45,45),Image.LANCZOS)
-# img1=ImageTk.PhotoImage(img_resize1)
-# right_label=Label(root,image=img1,width=45,height=45,background="black")
-# # right_label.pack()
-# # right_label.place(x=664,y=340)
+# RIGHT_INDICATOR....
+p1=Image.open("r.png")
+img_resize1=p1.resize((45,45),Image.LANCZOS)
+img1=ImageTk.PhotoImage(img_resize1)
+right_label=Label(root,image=img1,width=45,height=45,background="black")
+right_label.pack()
+right_label.place(x=664,y=340)
 
-# # LEFT INDICATOR..................................
-# p2=Image.open("l.png")
-# img_resize2=p2.resize((45,45),Image.LANCZOS)
-# img2=ImageTk.PhotoImage(img_resize2)
-# left_label=Label(root,image=img2,width=45,height=45,background="black")
-# # left_label.pack()
-# # left_label.place(x=437,y=340)
+# LEFT INDICATOR..................................
+p2=Image.open("l.png")
+img_resize2=p2.resize((45,45),Image.LANCZOS)
+img2=ImageTk.PhotoImage(img_resize2)
+left_label=Label(root,image=img2,width=45,height=45,background="black")
+left_label.pack()
+left_label.place(x=437,y=340)
 
-# WIPER INDICATOR.................................
-# p3=Image.open("wi.png")
-# img_resize3=p3.resize((50,50),Image.LANCZOS)
-# img3=ImageTk.PhotoImage(img_resize3)
-# wiper_label=Label(root,image=img3,width=74,height=53,background="black")
-# wiper_label.pack()
-# wiper_label.place(x=540,y=405)
+WIPER INDICATOR.................................
+p3=Image.open("wi.png")
+img_resize3=p3.resize((50,50),Image.LANCZOS)
+img3=ImageTk.PhotoImage(img_resize3)
+wiper_label=Label(root,image=img3,width=74,height=53,background="black")
+wiper_label.pack()
+wiper_label.place(x=540,y=405)
 
-# # HEAD_LIGHT.......................................
-# p4=Image.open("head.png")
-# img_resize4=p4.resize((50,50),Image.LANCZOS)
-# img4=ImageTk.PhotoImage(img_resize4)
-# head_label=Label(root,image=img4,width=70,height=53,background="black")
-# # head_label.pack()
-# # head_label.place(x=540,y=335)
+# HEAD_LIGHT.......................................
+p4=Image.open("head.png")
+img_resize4=p4.resize((50,50),Image.LANCZOS)
+img4=ImageTk.PhotoImage(img_resize4)
+head_label=Label(root,image=img4,width=70,height=53,background="black")
+head_label.pack()
+head_label.place(x=540,y=335)
 
 # ..........SERIAL COMMUNICATION...............
 def update_label_speed():
