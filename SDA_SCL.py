@@ -40,16 +40,16 @@ label_for_speed=Label(root,text="distance",font="valera 23",width=5,height=2)
 label_for_speed.place(x=127,y=244)
 bus =smbus2.SMBus(1)
 
-# i2c_1=0x08
-# print("arduino connected")                                       
+i2c_1=0x08
+print("arduino connected")                                       
 
-# def update_label_speed():
-#     data = bus.read_i2c_block_data(i2c_1,0,2)
-#     # print(data[0])
+def update_label_speed():
+    data = bus.read_i2c_block_data(i2c_1,0,2)
+    # print(data[0])
 
-#     label_for_speed.config(text=data[0],fg="#ffffff",bg="#000000")
-#     root.after(800,update_label_speed)
-# update_label_speed()
+    label_for_speed.config(text=data[0],fg="#ffffff",bg="#000000")
+    root.after(800,update_label_speed)
+update_label_speed()
 
 # .................................................................
 # TIME & DATE
@@ -118,164 +118,164 @@ label_wiper.place(x=5400,y=4500)
 print("done connected headlight")
 
 
-# def update_label_head():
-#     data=bus.read_i2c_block_data(I2C_ADDRESS,0,2)
-#     mydata=(data[0]*256)+data[1]
-#     print(mydata)
-#     if mydata==0:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=3420,y=1000)   #no haz
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=5420,y=3250) 
-#         label_indi.config(image=neutral_ready,background="black")
-#         label_indi.place(x=3420,y=1000) 
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=5400,y=4500) 
+def update_label_head():
+    data=bus.read_i2c_block_data(I2C_ADDRESS,0,2)
+    mydata=(data[0]*256)+data[1]
+    print(mydata)
+    if mydata==0:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=3420,y=1000)   #no haz
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=5420,y=3250) 
+        label_indi.config(image=neutral_ready,background="black")
+        label_indi.place(x=3420,y=1000) 
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=5400,y=4500) 
 
 
-#     elif mydata==1:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=342,y=10)
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=5420,y=3250) 
-#         label_indi.config(image=neutral_ready,background="black")
-#         label_indi.place(x=3420,y=1000) 
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=5400,y=4500) 
+    elif mydata==1:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=342,y=10)
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=5420,y=3250) 
+        label_indi.config(image=neutral_ready,background="black")
+        label_indi.place(x=3420,y=1000) 
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=5400,y=4500) 
 
-#     elif mydata==10:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=3420,y=1000)   #no haz
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=5420,y=3250) 
-#         label_indi.config(image=left_ready,background="black")
-#         label_indi.place(x=437,y=340) 
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=5400,y=4500)
+    elif mydata==10:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=3420,y=1000)   #no haz
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=5420,y=3250) 
+        label_indi.config(image=left_ready,background="black")
+        label_indi.place(x=437,y=340) 
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=5400,y=4500)
 
-#     elif mydata==100:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=3420,y=1000)   #no haz
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=5420,y=3250) 
-#         label_indi.config(image=neutral_ready,background="black")
-#         label_indi.place(x=3420,y=1000) 
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=540,y=410)
+    elif mydata==100:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=3420,y=1000)   #no haz
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=5420,y=3250) 
+        label_indi.config(image=neutral_ready,background="black")
+        label_indi.place(x=3420,y=1000) 
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=540,y=410)
 
-#     elif mydata==1000:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=3420,y=1000)   #no haz
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=542,y=325) 
-#         label_indi.config(image=neutral_ready,background="black")
-#         label_indi.place(x=3420,y=1000) 
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=5400,y=4500)
+    elif mydata==1000:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=3420,y=1000)   #no haz
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=542,y=325) 
+        label_indi.config(image=neutral_ready,background="black")
+        label_indi.place(x=3420,y=1000) 
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=5400,y=4500)
 
-#     elif mydata==1001:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=342,y=10)   #no haz
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=542,y=325) 
-#         label_indi.config(image=neutral_ready,background="black")
-#         label_indi.place(x=3420,y=1000) 
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=5400,y=4500)
-#     elif mydata==1010:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=3420,y=1000)   #no haz
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=542,y=325) 
-#         label_indi.config(image=left_ready,background="black")
-#         label_indi.place(x=437,y=340) 
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=5400,y=4500)
-#     elif mydata==1100:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=3420,y=1000)   #no haz
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=542,y=325) 
-#         label_indi.config(image=right_ready,background="black")
-#         label_indi.place(x=6640,y=3400) 
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=540,y=410)
-#     elif mydata==1101:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=342,y=10)   #no haz
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=542,y=325) 
-#         label_indi.config(image=right_ready,background="black")
-#         label_indi.place(x=6640,y=3400) 
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=540,y=410)
-#     elif mydata==1110:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=3420,y=1000)   #no haz
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=542,y=325) 
-#         label_indi.config(image=left_ready,background="black")
-#         label_indi.place(x=437,y=340)  
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=540,y=410)
+    elif mydata==1001:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=342,y=10)   #no haz
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=542,y=325) 
+        label_indi.config(image=neutral_ready,background="black")
+        label_indi.place(x=3420,y=1000) 
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=5400,y=4500)
+    elif mydata==1010:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=3420,y=1000)   #no haz
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=542,y=325) 
+        label_indi.config(image=left_ready,background="black")
+        label_indi.place(x=437,y=340) 
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=5400,y=4500)
+    elif mydata==1100:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=3420,y=1000)   #no haz
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=542,y=325) 
+        label_indi.config(image=right_ready,background="black")
+        label_indi.place(x=6640,y=3400) 
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=540,y=410)
+    elif mydata==1101:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=342,y=10)   #no haz
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=542,y=325) 
+        label_indi.config(image=right_ready,background="black")
+        label_indi.place(x=6640,y=3400) 
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=540,y=410)
+    elif mydata==1110:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=3420,y=1000)   #no haz
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=542,y=325) 
+        label_indi.config(image=left_ready,background="black")
+        label_indi.place(x=437,y=340)  
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=540,y=410)
 
-#     elif mydata==101:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=342,y=10)   #no haz
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=5420,y=3250) 
-#         label_indi.config(image=left_ready,background="black")
-#         label_indi.place(x=4370,y=3400)  
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=540,y=410)
-#     elif mydata==20:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=3420,y=1000)   #no haz
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=5420,y=3250) 
-#         label_indi.config(image=right_ready,background="black")
-#         label_indi.place(x=664,y=340) 
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=5400,y=4500)
-#     elif mydata==1020:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=3420,y=1000)   #no haz
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=542,y=325) 
-#         label_indi.config(image=right_ready,background="black")
-#         label_indi.place(x=664,y=340) 
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=5400,y=4500)
-#     elif mydata==120:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=3420,y=1000)   #no haz
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=5420,y=3250) 
-#         label_indi.config(image=right_ready,background="black")
-#         label_indi.place(x=664,y=340) 
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=540,y=410)
-#     elif mydata==1120:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=3420,y=1000)   #no haz
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=542,y=325) 
-#         label_indi.config(image=right_ready,background="black")
-#         label_indi.place(x=664,y=340) 
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=540,y=410)
-#     elif mydata==110:
-#         label_haz.config(image=haz3,background="black")
-#         label_haz.place(x=3420,y=1000)   #no haz
-#         label_head_light.config(image=hl_3,background="black")
-#         label_head_light.place(x=5420,y=3250) 
-#         label_indi.config(image=left_ready,background="black")
-#         label_indi.place(x=437,y=340) 
-#         label_wiper.config(image=wiper3,background="black")
-#         label_wiper.place(x=540,y=410)
+    elif mydata==101:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=342,y=10)   #no haz
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=5420,y=3250) 
+        label_indi.config(image=left_ready,background="black")
+        label_indi.place(x=4370,y=3400)  
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=540,y=410)
+    elif mydata==20:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=3420,y=1000)   #no haz
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=5420,y=3250) 
+        label_indi.config(image=right_ready,background="black")
+        label_indi.place(x=664,y=340) 
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=5400,y=4500)
+    elif mydata==1020:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=3420,y=1000)   #no haz
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=542,y=325) 
+        label_indi.config(image=right_ready,background="black")
+        label_indi.place(x=664,y=340) 
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=5400,y=4500)
+    elif mydata==120:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=3420,y=1000)   #no haz
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=5420,y=3250) 
+        label_indi.config(image=right_ready,background="black")
+        label_indi.place(x=664,y=340) 
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=540,y=410)
+    elif mydata==1120:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=3420,y=1000)   #no haz
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=542,y=325) 
+        label_indi.config(image=right_ready,background="black")
+        label_indi.place(x=664,y=340) 
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=540,y=410)
+    elif mydata==110:
+        label_haz.config(image=haz3,background="black")
+        label_haz.place(x=3420,y=1000)   #no haz
+        label_head_light.config(image=hl_3,background="black")
+        label_head_light.place(x=5420,y=3250) 
+        label_indi.config(image=left_ready,background="black")
+        label_indi.place(x=437,y=340) 
+        label_wiper.config(image=wiper3,background="black")
+        label_wiper.place(x=540,y=410)
         
-#     root.after(500,update_label_head)
+    root.after(500,update_label_head)
 
-# update_label_head()
+update_label_head()
 
 root.mainloop()
